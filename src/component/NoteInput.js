@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const NoteInput = () => {
   const [input, setInput] = useState("");
+  const [headers, setHeaders] = useState("");
   const [notes, setNotes] = useState([
-    { header: "Note", text: "add note here" },
+    { header: "Title", text: "add note here" },
   ]);
 
-  const addHeader = () => {
-    const addText = [...notes, { header: input[0].header }];
-    setNotes(addText);
+  const addnoteTitle = () => {
+    const addTitle = [...notes, { header: headers }];
+    setHeaders(addTitle);
   };
-
-  const addNote = () => {
-    const addText = [...notes, { text: input[0].text }];
+  useEffect(() => {
+    const addText = [...notes, { text: input }];
     setNotes(addText);
-  };
+  }, [headers]);
 
   const noteList = notes.map((item) => (
-    <li key={item.header}>
-      <button>{item.header}</button>
+    <li key={item.headers}>
+      {item.header}
       {item.text}
     </li>
   ));
@@ -28,9 +28,9 @@ const NoteInput = () => {
         <ol>{noteList}</ol>
       </div>
       <div>
+        <input onChange={(e) => setHeaders(e.target.value)} />
         <input onChange={(e) => setInput(e.target.value)} />
-        <input onChange={(e) => setInput(e.target.value)} />
-        <button onClick={addHeader}>Add Notes</button>
+        <button onClick={addnoteTitle}>Add Notes</button>
       </div>
     </>
   );
