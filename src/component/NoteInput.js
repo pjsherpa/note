@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const NoteInput = () => {
   const [input, setInput] = useState("");
@@ -7,14 +7,11 @@ const NoteInput = () => {
     { header: "Title", text: "add note here" },
   ]);
 
-  const addnoteTitle = () => {
-    const addTitle = [...notes, { header: headers }];
-    setHeaders(addTitle);
+  const addnoteTitle = (e) => {
+    e.preventDefault();
+    const addTitle = [...notes, { header: headers, text: input }];
+    console.log(addTitle);
   };
-  useEffect(() => {
-    const addText = [...notes, { text: input }];
-    setNotes(addText);
-  }, [headers]);
 
   const noteList = notes.map((item) => (
     <li key={item.headers}>
@@ -23,16 +20,17 @@ const NoteInput = () => {
     </li>
   ));
   return (
-    <>
+    <div>
       <div>
         <ol>{noteList}</ol>
+
+        <form style={{ textAlign: "center" }}>
+          <input value={headers} onChange={(e) => setHeaders(e.target.value)} />
+          <textarea value={input} onChange={(e) => setInput(e.target.value)} />
+          <button onSubmit={addnoteTitle}>Add Notes</button>
+        </form>
       </div>
-      <div>
-        <input onChange={(e) => setHeaders(e.target.value)} />
-        <input onChange={(e) => setInput(e.target.value)} />
-        <button onClick={addnoteTitle}>Add Notes</button>
-      </div>
-    </>
+    </div>
   );
 };
 
