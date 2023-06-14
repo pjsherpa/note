@@ -9,13 +9,13 @@ const NoteInput = () => {
 
   const addnoteTitle = (e) => {
     e.preventDefault();
-    const addTitle = [...notes, { header: headers, text: input }];
-    console.log(addTitle);
+    const newNote = { header: headers, text: input };
+    setNotes([...notes, newNote]);
   };
 
   const noteList = notes.map((item) => (
     <li key={item.headers}>
-      {item.header}
+      <button>{item.header}</button>
       {item.text}
     </li>
   ));
@@ -24,10 +24,10 @@ const NoteInput = () => {
       <div>
         <ol>{noteList}</ol>
 
-        <form style={{ textAlign: "center" }}>
+        <form style={{ textAlign: "center" }} onSubmit={addnoteTitle}>
           <input value={headers} onChange={(e) => setHeaders(e.target.value)} />
           <textarea value={input} onChange={(e) => setInput(e.target.value)} />
-          <button onSubmit={addnoteTitle}>Add Notes</button>
+          <button type="submit">Add Notes</button>
         </form>
       </div>
     </div>
