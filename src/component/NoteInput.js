@@ -26,11 +26,11 @@ const NoteInput = () => {
   ));
   return (
     <div>
-      <h1>{notePop}</h1>
+      <h4>Note:{notePop}</h4>
       <div>
         <ol>{noteList}</ol>
 
-        <form style={{ textAlign: "center" }} onSubmit={addnoteTitle}>
+        <form style={{ justifyContent: "center" }} onSubmit={addnoteTitle}>
           <input
             placeholder={"Title"}
             value={headers}
