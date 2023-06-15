@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+//if nothing has been typed in gives out an alert to say please add text.
+
 const NoteInput = () => {
   const [input, setInput] = useState("");
   const [headers, setHeaders] = useState("");
@@ -11,11 +13,15 @@ const NoteInput = () => {
   }, [notes]);
 
   const addnoteTitle = (e) => {
-    e.preventDefault();
-    const newNote = { header: headers, text: input };
-    setNotes([...notes, newNote]);
-    setInput("");
-    setHeaders("");
+    if (headers === "" && input === "") {
+      alert("Please add required information");
+    } else {
+      e.preventDefault();
+      const newNote = { header: headers, text: input };
+      setNotes([...notes, newNote]);
+      setInput("");
+      setHeaders("");
+    }
   };
 
   const noteList = notes.map((item) => (
