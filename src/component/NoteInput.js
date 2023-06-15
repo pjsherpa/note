@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-//if nothing has been typed in gives out an alert to say please add text.
+//Functionality first and then style upgrade after component splitting.
+//header and text are replaced by new note
+//Hide text and only once clicked on the header displays text.
+//create text box so when clicked is ready to be edited.
+//component splitting once functionality is made.
 
 const NoteInput = () => {
   const [input, setInput] = useState("");
   const [headers, setHeaders] = useState("");
   const [notes, setNotes] = useState([{ header: "headers", text: "text" }]);
   const [notePop, setNotePop] = useState(0);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     setNotePop(notePop + 1);
@@ -24,10 +29,14 @@ const NoteInput = () => {
     }
   };
 
+  const handleButtonClickShow = () => {
+    showText === false ? setShowText(true) : setShowText(false);
+  };
+
   const noteList = notes.map((item) => (
     <li key={item.headers}>
-      <button>{item.header}</button>
-      {item.text}
+      <button onClick={handleButtonClickShow}>{item.header}</button>
+      <div>{showText ? item.text : ""}</div>
     </li>
   ));
   return (
