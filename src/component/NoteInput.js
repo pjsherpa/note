@@ -30,18 +30,25 @@ const NoteInput = () => {
       <div>
         <ol>{noteList}</ol>
 
-        <form style={{ justifyContent: "center" }} onSubmit={addnoteTitle}>
-          <input
-            placeholder={"Title"}
-            value={headers}
-            onChange={(e) => setHeaders(e.target.value)}
-          />
-          <textarea
-            placeholder={"add note here"}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button type="submit">Add Notes</button>
+        <form style={{ textAlign: "center" }} onSubmit={addnoteTitle}>
+          <div>
+            {" "}
+            <input
+              placeholder={"Title"}
+              value={headers}
+              onChange={(e) => setHeaders(e.target.value)}
+            />
+          </div>
+          <div>
+            <textarea
+              placeholder={"add note here"}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </div>
+          <div>
+            <button type="submit">Add Notes</button>
+          </div>
         </form>
       </div>
     </div>
