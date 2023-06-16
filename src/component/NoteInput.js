@@ -13,6 +13,7 @@ const NoteInput = () => {
     { header: "headers2", text: "text2" },
   ]);
   const [notePop, setNotePop] = useState(0);
+  const [selectedNote, setSelectedNote] = useState(0);
   const [showText, setShowText] = useState(false);
 
   const addnoteTitle = (e) => {
@@ -29,23 +30,24 @@ const NoteInput = () => {
   useEffect(() => {
     setNotePop(notePop + 1);
   }, [notes]);
+
   const handleButtonClickShow = (header) => {
+    setSelectedNote(header);
     setShowText(!showText);
   };
 
   const noteList = notes.map((item) => {
     return (
       <li key={item.headers}>
-        <button onClick={handleButtonClickShow}>{item.header}</button>
-        <div>
-          {showText ? (
-            <>
-              <textarea>{item.text}</textarea> <button>Done</button>
-            </>
-          ) : (
-            ""
-          )}
-        </div>
+        <button onClick={() => handleButtonClickShow(item.header)}>
+          {item.header}
+        </button>
+        {selectedNote === item.header && showText && (
+          <div>
+            <textarea defaultValue={item.text}></textarea>{" "}
+            {/* <button onClick={'}>Done</button> */}
+          </div>
+        )}
       </li>
     );
   });
