@@ -36,6 +36,11 @@ const NoteInput = () => {
     setShowText(!showText);
   };
 
+  const handleDoneButtonClick = () => {
+    setSelectedNote("");
+    setShowText(false);
+  };
+
   const noteList = notes.map((item) => {
     return (
       <li key={item.headers}>
@@ -45,7 +50,7 @@ const NoteInput = () => {
         {selectedNote === item.header && showText && (
           <div>
             <textarea defaultValue={item.text}></textarea>{" "}
-            {/* <button onClick={'}>Done</button> */}
+            <button onClick={handleDoneButtonClick}>Done</button>
           </div>
         )}
       </li>
