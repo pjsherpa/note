@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 //Functionality first and then style upgrade after component splitting.
-//header and text are replaced by new note.
-//when clicked only the header clicked on shows its text.
+//edit header as well
 //component splitting once functionality is made.
 
 const NoteInput = () => {
@@ -41,6 +40,11 @@ const NoteInput = () => {
     setShowText(false);
   };
 
+  const handleDeletebuttonClick = (header) => {
+    const remove = notes.filter((notes) => header !== notes.header);
+    setNotes(remove);
+  };
+
   const noteList = notes.map((item) => {
     return (
       <li key={item.headers}>
@@ -51,6 +55,9 @@ const NoteInput = () => {
           <div>
             <textarea defaultValue={item.text}></textarea>{" "}
             <button onClick={handleDoneButtonClick}>Done</button>
+            <button onClick={() => handleDeletebuttonClick(item.header)}>
+              Delete
+            </button>
           </div>
         )}
       </li>
