@@ -1,6 +1,17 @@
+*{
+  background-color:burlywood
+}
+
 .button{
   font-style: normal;
   font-size: larger;
   font-weight: bolder;
   background-color: grey;
+}
+
+.noteHeader{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  justify-content: end;
+  background-color: yellow;
 }

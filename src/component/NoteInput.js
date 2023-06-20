@@ -68,7 +68,7 @@ const NoteInput = () => {
   });
   return (
     <div>
-      <h4>Note:{notePop}</h4>
+      <h4 className="noteHeader">Note:{notePop}</h4>
       <div>
         <ol>{noteList}</ol>
 
