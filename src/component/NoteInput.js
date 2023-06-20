@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "./NoteInputStyle.css";
 //Functionality first and then style upgrade after component splitting.
 //edit header as well
 //component splitting once functionality is made.
@@ -48,7 +48,10 @@ const NoteInput = () => {
   const noteList = notes.map((item) => {
     return (
       <li key={item.headers}>
-        <button onClick={() => handleButtonClickShow(item.header)}>
+        <button
+          className="button"
+          onClick={() => handleButtonClickShow(item.header)}
+        >
           {item.header}
         </button>
         {selectedNote === item.header && showText && (
