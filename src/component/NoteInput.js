@@ -58,7 +58,10 @@ const NoteInput = () => {
           <div>
             <textarea defaultValue={item.text}></textarea>{" "}
             <button onClick={handleDoneButtonClick}>Done</button>
-            <button onClick={() => handleDeletebuttonClick(item.header)}>
+            <button
+              className="deleteButton"
+              onClick={() => handleDeletebuttonClick(item.header)}
+            >
               Delete
             </button>
           </div>
