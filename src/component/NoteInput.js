@@ -52,7 +52,7 @@ const NoteInput = () => {
           className="button"
           onClick={() => handleButtonClickShow(item.header)}
         >
-          {item.header}
+          <span>{item.header}</span>
         </button>
         {selectedNote === item.header && showText && (
           <div>
