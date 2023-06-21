@@ -3,19 +3,26 @@
 }
 
 .button{
-  font-style: normal;
-  font-size: larger;
-  font-weight: bolder;
-  background-color: grey;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: bisque;
+  border: none;
+  color:cadetblue;
+  text-align:center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:5px;
 }
+
+
+
 
 .noteHeader{
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   justify-content: end;
   background-color: yellow;
-}
-
-.deleteButton{
-  background-color: red;
 }
