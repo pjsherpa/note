@@ -72,7 +72,9 @@ const NoteInput = () => {
   return (
     <div>
       <header className="header">note</header>
-      <h4 className="noteHeader">Note:{notePop}</h4>
+      <h4 className="noteHeader">
+        <i>Note:{notePop}</i>
+      </h4>
       <div>
         <ol>{noteList}</ol>
 
