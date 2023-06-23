@@ -36,6 +36,8 @@ const NoteInput = () => {
   };
 
   const handleDoneButtonClick = () => {
+    //fix this need to split and create edit button
+
     setSelectedNote("");
     setShowText(false);
   };
@@ -56,7 +58,7 @@ const NoteInput = () => {
         </button>
         {selectedNote === item.header && showText && (
           <div>
-            <textarea defaultValue={item.text}></textarea>{" "}
+            <textarea className="text" defaultValue={item.text}></textarea>{" "}
             <button onClick={handleDoneButtonClick}>Done</button>
             <button
               className="deleteButton"
