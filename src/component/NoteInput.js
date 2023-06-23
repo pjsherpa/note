@@ -71,6 +71,7 @@ const NoteInput = () => {
   });
   return (
     <div>
+      <header className="header">note</header>
       <h4 className="noteHeader">Note:{notePop}</h4>
       <div>
         <ol>{noteList}</ol>
