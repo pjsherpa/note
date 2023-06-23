@@ -36,15 +36,19 @@ const NoteInput = () => {
     setShowText(!showText);
   };
 
-  const handleDoneButtonClick = (header) => {
+  const handleDoneButtonClick = () => {
     //fix this need to split and create edit button
     const updateNote = notes.map((item) => {
-      if (header === item.header) {
-        item.text = edit;
+      if (item.header === selectedNote) {
+        return {
+          ...notes,
+          header: headers,
+          text: edit,
+        };
       }
       return item;
     });
-    console.log(updateNote);
+    setNotes(updateNote);
     setShowText(null);
     setEdit("");
   };
@@ -71,7 +75,9 @@ const NoteInput = () => {
               value={item.edit}
               onChange={(e) => setEdit(e.target.value)}
             ></textarea>{" "}
-            <button onClick={handleDoneButtonClick}>Done</button>
+            <button onClick={handleDoneButtonClick} value={edit}>
+              Done
+            </button>
             <button
               className="deleteButton"
               onClick={() => handleDeletebuttonClick(item.header)}
