@@ -42,15 +42,16 @@ const NoteInput = () => {
       if (item.header === selectedNote) {
         return {
           ...notes,
-          header: headers,
+          header: item.header,
           text: edit,
         };
       }
       return item;
     });
     setNotes(updateNote);
-    setShowText(null);
+    setShowText(false);
     setEdit("");
+    setSelectedNote("");
   };
 
   const handleDeletebuttonClick = (header) => {
