@@ -3,7 +3,7 @@ import "./NoteInputStyle.css";
 //Functionality first and then style upgrade after component splitting.
 //edit header as well
 //component splitting once functionality is made.
-
+//when clicking on headers make the text box disappear.
 const NoteInput = () => {
   const [input, setInput] = useState("");
   const [headers, setHeaders] = useState("");
@@ -97,8 +97,6 @@ const NoteInput = () => {
         <i>Note:{notePop}</i>
       </h4>
       <div>
-        <ol>{noteList}</ol>
-
         <form style={{ textAlign: "center" }} onSubmit={addnoteTitle}>
           <div>
             {" "}
@@ -119,6 +117,7 @@ const NoteInput = () => {
             <button type="submit">Add Notes</button>
           </div>
         </form>
+        <ol>{noteList}</ol>
       </div>
     </div>
   );

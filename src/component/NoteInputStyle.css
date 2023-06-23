@@ -68,5 +68,8 @@ li{
 textarea{
   background-color: aqua;
   border-radius: 16px;
-  
+}
+
+title{
+  font-family: 'Courier New', Courier, monospace;
 }
