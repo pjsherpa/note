@@ -61,7 +61,7 @@ const NoteInput = () => {
 
   const noteList = notes.map((item) => {
     return (
-      <li key={item.headers}>
+      <li className="container" key={item.headers}>
         <button
           className="button"
           onClick={() => handleButtonClickShow(item.header)}
@@ -91,7 +91,7 @@ const NoteInput = () => {
     );
   });
   return (
-    <div>
+    <div className="container">
       <header className="header">note</header>
       <h4 className="noteHeader">
         <i>Note:{notePop}</i>

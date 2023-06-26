@@ -1,3 +1,6 @@
+.container{
+  background-color:yellow;
+}
 
 .header{
   display: inline-block;
@@ -35,6 +38,7 @@ opacity: 0;
 top: 0;
 right: -20px;
 transition: 0.5;  
+background-color: bisque;
 }
 .button:hover span {
   padding-right: 35px;
@@ -58,7 +62,7 @@ transition: 0.5;
 }
 
 i{
-  background-color:yellow;
+  background-color:bisque;
 }
 
 li{
