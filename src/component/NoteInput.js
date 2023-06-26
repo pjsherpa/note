@@ -114,7 +114,9 @@ const NoteInput = () => {
             />
           </div>
           <div>
-            <button type="submit">Add Notes</button>
+            <button className="addOn" type="submit">
+              Add Notes
+            </button>
           </div>
         </form>
         <ol>{noteList}</ol>
