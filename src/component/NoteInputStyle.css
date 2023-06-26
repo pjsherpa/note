@@ -1,12 +1,14 @@
-.container{
+html{
   background-color:yellow;
 }
 
 .header{
-  display: inline-block;
-  border-radius: 80px 2px 80px;
-  background-color: rgb(66, 66, 152);
+  padding-top:50px;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(53, 53, 68);
   font-size:50px;
+  color: aliceblue;
 }
 
 .button{
