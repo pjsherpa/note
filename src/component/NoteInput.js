@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./NoteInputStyle.css";
+import "./noteInputStyle.css";
+import Footer from "./Footer";
 //Functionality first and then style upgrade after component splitting.
 //edit header as well
 //component splitting once functionality is made.
@@ -120,6 +121,7 @@ const NoteInput = () => {
           </div>
         </form>
         <ol>{noteList}</ol>
+        <Footer />
       </div>
     </div>
   );
